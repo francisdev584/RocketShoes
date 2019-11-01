@@ -26,9 +26,7 @@ export default function cart(state = [], action) {
       return produce(state, draft => {
         const productIndex = draft.findIndex(p => p.id === action.id);
 
-        if (productIndex >= 0) {
-          draft[productIndex].amount = Number(action.amount);
-        }
+        draft[productIndex].amount = Number(action.amount);
       });
     default:
       return state;
